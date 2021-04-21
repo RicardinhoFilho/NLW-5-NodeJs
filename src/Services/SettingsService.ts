@@ -1,6 +1,6 @@
 import { getCustomRepository } from "typeorm";
 import { SettingsRepository } from "../repositories/SettingsRepository";
-import { ISettingsCreate } from "./ISettingsCreate";
+import { ISettingsCreate } from "../Utils/ISettingsCreate";
 
 export class SettingsService {
   async create({ chat, userName }: ISettingsCreate) {
@@ -24,3 +24,4 @@ export class SettingsService {
     return settings;
   }
 }
+
