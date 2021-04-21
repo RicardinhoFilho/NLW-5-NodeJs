@@ -13,6 +13,7 @@ routes.post("/settings", settings.create)
 routes.post("/users", user.create)
 
 routes.post("/messages", message.create)
+routes.get("/messages/:id", message.showByUser)
 
 
 export {routes};
