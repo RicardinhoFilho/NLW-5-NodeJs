@@ -9,7 +9,7 @@ import {
 import { User } from "./User";
 import { v4 as uuid } from "uuid";
 
-@Entity("connections")
+@Entity("connections") 
 export class Connection {
   constructor() {
     if (!this.id) {

@@ -18,4 +18,29 @@ export class SettingController {
     }
    
   }
+
+  async finByUserName(req: Request, res: Response){
+    const {userName} = req.params;
+
+    const settingsService = new SettingsService();
+
+    const settings = await settingsService.findByUserName(userName);
+  }
+
+
+  async update(req: Request, res: Response) {
+    try{
+      const {  userName } = req.params;
+      const {chat} = req.body;
+  console.log(chat)
+      const settingsService = new SettingsService();
+  
+      const settings = await settingsService.update(userName, chat);
+  
+      return res.json(await settingsService.findByUserName(userName));
+    }catch(error){
+      res.status(400).json({message: error.message});
+    }
+   
+  }
 }
